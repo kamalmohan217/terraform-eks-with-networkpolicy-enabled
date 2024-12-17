@@ -5,43 +5,11 @@
 3. Finally you can create the different environment depending on your need using this terraform script.
 ```   
 
-# Managing kubeconfig file
-```
-For best practice you can keep the kubeconfig file at separate paths and create directories as mentioned below:-
+# Enable Network Policy in EKS
 
- mkdir dev
- mkdir stage
- mkdir prod
+![image](https://github.com/user-attachments/assets/b5a8d3eb-d20f-4759-947e-c1217dfd7e36)
 
-Move kubeconfig file to different directories which was created earlier:-
-
-After creation of kubernetes cluster in dev enviroment move kubeconfig file into the newly created path
-mv ~/.kube dev/
-
-
-After creation of kubernetes cluster in stage enviroment move kubeconfig file into the newly created path
-mv ~/.kube stage/
-
-
-After creation of kubernetes cluster in prod enviroment move kubeconfig file into the newly created path
-mv ~/.kube prod/
-
-Now you can access the kubernetes cluster using the kubeconfig file as mentioned below:-
-
-kubectl get nodes --kubeconfig=dev/.kube/config
-
-kubectl get nodes --kubeconfig=stage/.kube/config
-
-kubectl get nodes --kubeconfig=prod/.kube/config
-```
-
-If you are managing the same kubeconfig file for all the the three environments which is dev, stage and prod then use context and follow the below steps:-
-
-# To list the context and switch context
-```
-kubectl config get-contexts
-kubectl config use-context <CONTEXT_NAME>
-```
+![image](https://github.com/user-attachments/assets/64410f70-cbbd-4074-bb64-072b2603cc98)
 
 
 # Install and configure EKS Container Insight 
